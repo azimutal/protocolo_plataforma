@@ -1,6 +1,6 @@
 # PROTOCOLO_PLATAFORMA
 
-Este repositorio implementa un dos programas de consola: 
+Este repositorio implementa dos programas de consola: 
 
 * [plataforma.py](plataforma.py). Este programa simula el software de plataforma con el que interactúa el usuario.
 * [vision_artificial.py](vision_artificial.py). Este programa simula el servicio de visión artificial.
