@@ -13,20 +13,20 @@ El protocolo _UDP_ es mucho más rápido que el _TCP_, pero no garantiza la entr
 
 En el protocolo _TCP_ se establece un canal de comunicación entre dos equipos y se puede utilizar este canal para enviar y recibir datos. Como en _UDP_ no tenemos este canal, tendremos que crear tantos canales unidireccionales distintos como sea necesario.
 
-En el módulo `constantes.py` se definen las constantes:
+En el módulo [constantes.py](constantes.py) se definen las constantes:
 
-`PUERTO_STREAMING` que es el puerto por el que esta aplicación recibe los datos de visión artificial.
-`PUERTO_MENSAJES_PLATAFORMA` que es el puerto por el que esta aplicación recibe los mensajes enviados por la visión artificial.
-`PUERTO_MENSAJES_VISION_ARTIFICIAL` que es el puerto por el que esta aplicación enviará mensajes al programa de visión artificial.
+- `PUERTO_STREAMING` que es el puerto por el que esta aplicación recibe los datos de visión artificial.
+- `PUERTO_MENSAJES_PLATAFORMA` que es el puerto por el que esta aplicación recibe los mensajes enviados por la visión artificial.
+- `PUERTO_MENSAJES_VISION_ARTIFICIAL` que es el puerto por el que esta aplicación enviará mensajes al programa de visión artificial.
 
 ## Mensajes de control
 
 Los mensajes de control que se envían ambos programas son un stream de 10 bytes con la siguiente estructura:
 
 - 2 bytes para el comando (entero)
-- 8 bytes para el valor opcional(float). Si el mensaje no requiere un valor, se envía aquí un 0, pero da igual lo que se envíe, pues no se va a utilizar este valor.
+- 8 bytes para el valor opcional (float). Si el mensaje no requiere un valor, se envía aquí un 0, pero da igual lo que se envíe, pues no se va a utilizar este valor.
 
-Podemos crear los mensajes que nos interesen. Este ejemplo implementa los siguientes mensajes (definidos en el módulo `mensajes_control.py`):
+Podemos crear los mensajes que nos interesen. Este ejemplo implementa los siguientes mensajes (definidos en el módulo [mensajes_control.py](mensajes_control.py)):
 
 - MENSAJE_ESTABLECER_MENSAJES_POR_SEGUNDO.
 - MENSAJE_COMENZAR_STREAMING
