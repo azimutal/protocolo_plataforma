@@ -23,7 +23,7 @@ En el módulo [constantes.py](constantes.py) se definen las constantes:
 
 Los mensajes de control que se envían ambos programas son un stream de 10 bytes con la siguiente estructura:
 
-- 2 bytes para el comando (entero)
+- 2 bytes para el comando (entero).
 - 8 bytes para el valor opcional (float). Si el mensaje no requiere un valor, se envía aquí un 0, pero da igual lo que se envíe, pues no se va a utilizar este valor.
 
 Podemos crear los mensajes que nos interesen. Este ejemplo implementa los siguientes mensajes (definidos en el módulo [mensajes_control.py](mensajes_control.py)):
