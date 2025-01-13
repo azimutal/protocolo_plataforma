@@ -28,10 +28,10 @@ Los mensajes de control que se envían ambos programas son un stream de 10 bytes
 
 Podemos crear los mensajes que nos interesen. Este ejemplo implementa los siguientes mensajes (definidos en el módulo [mensajes_control.py](mensajes_control.py)):
 
-- MENSAJE_ESTABLECER_MENSAJES_POR_SEGUNDO.
-- MENSAJE_COMENZAR_STREAMING
-- MENSAJE_FINALIZAR_STREAMING
-- MENSAJE_VISIBILIDAD_BAJA
+- `MENSAJE_ESTABLECER_MENSAJES_POR_SEGUNDO`.
+- `MENSAJE_COMENZAR_STREAMING`.
+- `MENSAJE_FINALIZAR_STREAMING`.
+- `MENSAJE_VISIBILIDAD_BAJA`.
 
 Este módulo implementa funciones para crear estos mensajes (`crea_mensaje_establecer_mensajes_por_segundo`, `crea_mensaje_comenzar_streaming`, `crea_mensaje_finalizar_streaming` y `crea_mensaje_visibilidad_baja`).
 
@@ -39,9 +39,9 @@ Este módulo implementa funciones para crear estos mensajes (`crea_mensaje_estab
 
 El programa de visión artificial envía un streaming de datos al programa de plataforma. En este ejemplo nos hemos inventado un mensaje formado por tres valores de tipo float que son:
 
-- 8 bytes para el delay
-- 8 bytes para el azimut
-- 8 bytes para la elevación
+- 8 bytes para el delay.
+- 8 bytes para el azimut.
+- 8 bytes para la elevación.
 
 ## Programa plataforma.py
 
@@ -58,9 +58,9 @@ Luego muestra el siguiente menú de opciones al usuario:
 3. Finalizar streaming visión artificial.
 4. Salir. 
 
-La primera opción solicita al usuario un valor de velocidad (que no sirve para nada, es por un ejemplo enviar un parámetro a visión artificial). Se crea el mensaje MENSAJE_ESTABLECER_MENSAJES_POR_SEGUNDO y se envía por el puerto PUERTO_MENSAJES_VISION_ARTIFICIAL.
-La segunda opción comienza el streaming de visión artificial. Se crea el mensaje MENSAJE_COMENZAR_STREAMING y se envía por el puerto PUERTO_MENSAJES_VISION_ARTIFICIAL.
-La tercera finaliza el streaming. Se crea el mensaje MENSAJE_FINALIZAR_STREAMING y se envía por el puerto PUERTO_MENSAJES_VISION_ARTIFICIAL.
+La primera opción solicita al usuario un valor de velocidad (que no sirve para nada, es por un ejemplo enviar un parámetro a visión artificial). Se crea el mensaje `MENSAJE_ESTABLECER_MENSAJES_POR_SEGUNDO` y se envía por el puerto `PUERTO_MENSAJES_VISION_ARTIFICIAL`.
+La segunda opción comienza el streaming de visión artificial. Se crea el mensaje `MENSAJE_COMENZAR_STREAMING` y se envía por el puerto `PUERTO_MENSAJES_VISION_ARTIFICIAL`.
+La tercera finaliza el streaming. Se crea el mensaje `MENSAJE_FINALIZAR_STREAMING` y se envía por el puerto `PUERTO_MENSAJES_VISION_ARTIFICIAL`.
 La cuarta opción finaliza el programa.
 
 ## Programa vision_artificial.py
@@ -68,7 +68,7 @@ La cuarta opción finaliza el programa.
 Al ejecutar este programa se crea:
 
 - Un servidor que recibirá mensajes del programa plataforma.
-- Un cliente que enviará el mensaje MENSAJE_VISIBILIDAD_BAJA al programa de plataforma.
+- Un cliente que enviará el mensaje `MENSAJE_VISIBILIDAD_BAJA` al programa de plataforma.
 - Un cliente que enviará el streaming cuando este se habilite.
 
 Luego muestra el siguiente menú de opciones al usuario:
