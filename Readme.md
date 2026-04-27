@@ -79,3 +79,14 @@ Luego muestra el siguiente menú de opciones al usuario:
 Si el usuario selecciona la primera opción, se enviará un mensaje al programa de plataforma para indicar que han cambiado las condiciones de visibilidad.
 Si el usuario selecciona la segunda opción se finalizará el programa.
 
+## Programa .NET para la lectura y comprobación de herztios
+
+Se ha añadido un pequeño programa de consola en el lenguaje C# que es idéntico al que se está utilizando en la aplicación final.
+
+Para compilar y ejecutar este programa en Linux, ejecutaremos la siguiente secuencia de comandos:
+
+```bash
+sudo apt install dotnet-sdk-10.0
+dotnet build
+dotnet run
+```
