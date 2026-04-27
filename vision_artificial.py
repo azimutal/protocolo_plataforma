@@ -62,7 +62,7 @@ def bucle_envia_mensajes_streaming():
     while not finalizar:
         if enviar_streaming:
             cliente_streaming.EnviaDatos(crea_mensaje_streaming(time.time(), random(), random(), random(), random(), random(), random(), random(), random()))
-            time.sleep(1 / mensajes_por_segundo)
+            time.sleep(1 / mensajes_por_segundo - 0.0005) # Restamos 0.0005 para compensar el tiempo que tarda en enviar el mensaje, de esta forma conseguimos que la velocidad de envío sea más cercana a la deseada.  
         else:
             time.sleep(1)
             
