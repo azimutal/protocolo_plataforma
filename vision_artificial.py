@@ -61,7 +61,7 @@ def menu_opciones():
 def bucle_envia_mensajes_streaming():
     while not finalizar:
         if enviar_streaming:
-            cliente_streaming.EnviaDatos(crea_mensaje_streaming(random(), random(), random()))
+            cliente_streaming.EnviaDatos(crea_mensaje_streaming(time.time(), random(), random(), random(), random(), random(), random(), random(), random()))
             time.sleep(1 / mensajes_por_segundo)
         else:
             time.sleep(1)

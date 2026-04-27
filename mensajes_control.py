@@ -8,8 +8,11 @@ MENSAJE_VISIBILIDAD_BAJA = 5
 # Los mensajes de control tienen el formato [comando, valor]. El comando es un entero de 2 bytes y el valor un float de 8.
 TAMANO_MENSAJE_CONTROL = 10
 
-# Los mensajes de streaming tienen el formato [delay, azimut, elevacion]. Todos los valores son floats de 8 bytes.
-TAMANO_MENSAJE_STREAMING = 24
+# Los mensajes de streaming tienen el formato:
+# [timestamp, yaw, pitch, roll_1, roll_2, roll_3, cuarto_eje_1, cuarto_eje_2, cuarto_eje_3].
+# Todos los valores son floats de 8 bytes.
+PLATFORM_STRUCT = struct.Struct("<d8f")
+TAMANO_MENSAJE_STREAMING = PLATFORM_STRUCT.size
 
 # La clase conexion_platforma.ComunicacionControlPlataforma espera recibir un callback que reciba un parámetro bytes con el mensaje,
 # pero a nosotros nos interesa pasarle una función que reciba dos parámetros, comando y valor. Por eso, creamos una función que reciba
@@ -32,7 +35,6 @@ def crea_mensaje_finalizar_streaming():
 def crea_mensaje_visibilidad_baja():
     return struct.pack('if', MENSAJE_VISIBILIDAD_BAJA, 0)
 
-def crea_mensaje_streaming(delay, azimut, elevacion):
-    return struct.pack('ddd', delay, azimut, elevacion)
-
+def crea_mensaje_streaming(timestamp, yaw, pitch, roll_1, roll_2, roll_3, cuarto_eje_1, cuarto_eje_2, cuarto_eje_3):
+    return PLATFORM_STRUCT.pack(timestamp, yaw, pitch, roll_1, roll_2, roll_3, cuarto_eje_1, cuarto_eje_2, cuarto_eje_3)
 
