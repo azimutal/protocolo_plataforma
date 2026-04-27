@@ -1,7 +1,7 @@
-from constantes import *
-from mensajes_control import * 
+from Python.constantes import *
+from Python.mensajes_control import * 
 from colorama import Fore
-from conexion_platforma import ComunicacionControlPlataforma
+from Python.conexion_platforma import ComunicacionControlPlataforma
 import struct
 
 COMANDO_ESTABLECER_VELOCIDAD = 1
